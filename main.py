@@ -1,4 +1,8 @@
 from twitchio.ext import commands
+from playsound import playsound
+from random import randint
+
+saludos=('¡Hola','¡Buenas','¡Saludos')
 
 class Bot(commands.Bot):
     
@@ -21,9 +25,11 @@ class Bot(commands.Bot):
         print(f"{author}: {content}")
         await self.handle_commands(message)
 
+    
+
     async def event_join(self, channel, user):
         try:
-            await channel.send(f"¡Bienvenido al canal, {user.name}!")
+            await channel.send(saludos[randint(0,2)]+ f" {user.name}, bienvenido al canal!")
         except Exception as e:
             print(f"Error al enviar mensaje de bienvenida: {e}")
 
@@ -38,6 +44,16 @@ class Bot(commands.Bot):
     @commands.command(name="hello")
     async def hello(self, ctx: commands.Context):
         await ctx.send(f"Hello, {ctx.author.display_name}!")
+        
+    @commands.command(name="gg")
+    async def gg(self, ctx: commands.Context):
+        await ctx.send(f"GG activado por: {ctx.author.display_name}!")
+        playsound('GG.mp3')
+    
+    @commands.command(name="f")
+    async def f(self, ctx: commands.Context):
+        await ctx.send(f"F activado por: {ctx.author.display_name}!")
+        playsound('ReZeroSound.ogg')
 
 bot = Bot()
 bot.run()
