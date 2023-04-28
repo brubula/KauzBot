@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'KauzBot'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A61C6A4C1D724E73ADC5728C74CD397D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1A6A5196CBD94158A63636B18CB6B211 }}
