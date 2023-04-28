@@ -38,12 +38,10 @@ class Bot(commands.Bot):
         await self.get_channel(channel).send(f"¡Bienvenido al canal, @{self.nick} está aquí para ayudarte!")
     
 
-
-
     
-    @commands.command(name="hello")
-    async def hello(self, ctx: commands.Context):
-        await ctx.send(f"Hello, {ctx.author.display_name}!")
+    @commands.command(name="hola")
+    async def hola(self, ctx: commands.Context):
+        await ctx.send(f"Hola, {ctx.author.display_name}!")
         
     @commands.command(name="gg")
     async def gg(self, ctx: commands.Context):
@@ -53,7 +51,7 @@ class Bot(commands.Bot):
     @commands.command(name="f")
     async def f(self, ctx: commands.Context):
         await ctx.send(f"F activado por: {ctx.author.display_name}!")
-        playsound('ReZeroSound.ogg')
+        playsound('ReZeroSound.mp3')
 
 bot = Bot()
 bot.run()
